@@ -121,7 +121,6 @@ const InternalMenuItem = styled(Link)`
 const CODE_LINK = 'https://github.com/Uniswap/uniswap-interface'
 
 export default function Menu() {
-
   const node = useRef<HTMLDivElement>()
   const open = useModalOpen(ApplicationModal.MENU)
   const toggle = useToggleModal(ApplicationModal.MENU)
@@ -156,7 +155,6 @@ export default function Menu() {
             <PieChart size={14} />
             <div>Analytics</div>
           </MenuItem>
-          
         </MenuFlyout>
       )}
     </StyledMenu>
