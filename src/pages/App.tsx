@@ -30,6 +30,7 @@ import Swap from './Swap'
 import { OpenClaimAddressModalAndRedirectToSwap, RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
 import Vote from './Vote'
 import VotePage from './Vote/VotePage'
+import TopBar from '../components/TopBar';
 
 const AppWrapper = styled.div`
   display: flex;
@@ -80,6 +81,7 @@ export default function App() {
       <Route component={DarkModeQueryParamReader} />
       <AppWrapper>
         <URLWarning />
+        <TopBar/>
         <HeaderWrapper>
           <Header />
         </HeaderWrapper>
