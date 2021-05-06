@@ -275,7 +275,6 @@ export default function Header() {
 
   const [showUniBalanceModal, setShowUniBalanceModal] = useState(false)
 
-
   return (
     <HeaderFrame>
       <ClaimModal />
@@ -320,7 +319,7 @@ export default function Header() {
               <NetworkCard title={NETWORK_LABELS[chainId]}>{NETWORK_LABELS[chainId]}</NetworkCard>
             )}
           </HideSmall>
-          
+
           <AccountElement active={!!account} style={{ pointerEvents: 'auto' }}>
             {account && userEthBalance ? (
               <BalanceText style={{ flexShrink: 0 }} pl="0.75rem" pr="0.5rem" fontWeight={500}>
