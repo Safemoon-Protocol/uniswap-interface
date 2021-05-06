@@ -293,6 +293,30 @@ export default function Header() {
             <img width={'24px'} src={darkMode ? LogoDark : Logo} alt="logo" />
           </UniIcon>
         </Title>
+        <HeaderLinks>
+          <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
+            {t('swap')}
+          </StyledNavLink>
+          <StyledNavLink
+            id={`pool-nav-link`}
+            to={'/pool'}
+            isActive={(match, { pathname }) =>
+              Boolean(match) ||
+              pathname.startsWith('/add') ||
+              pathname.startsWith('/remove') ||
+              pathname.startsWith('/create') ||
+              pathname.startsWith('/find')
+            }
+          >
+            {t('pool')}
+          </StyledNavLink>
+          <StyledNavLink id={`stake-nav-link`} to={'/vote'}>
+            Vote
+          </StyledNavLink>
+          <StyledExternalLink id={`stake-nav-link`} href={'https://uniswap.info'}>
+            Charts <span style={{ fontSize: '11px' }}>↗</span>
+          </StyledExternalLink>
+        </HeaderLinks>
       </HeaderRow>
       <HeaderLinks>
         <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
