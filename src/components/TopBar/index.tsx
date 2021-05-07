@@ -46,12 +46,20 @@ export const TopNavListElement = styled.li`
     &:first-child {
         padding-left: 0;
     }
+    &a {
+        #008a81!important
+    }
 `;
 
 
 export const TopLink = styled.a`
-    display: inline-block;
-    
+    & {
+        display: inline-block;
+        color: #008a81 !important;
+    }
+    &:hover {
+        color: #00c2b5 !important;
+    }
 `
 
 export default function TopBar() {
