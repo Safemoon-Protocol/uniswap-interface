@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled, { DefaultTheme } from 'styled-components'
 import { ProposalState } from '../../state/governance/hooks'
 
-const handleColorType = (status?: ProposalState, theme?: any) => {
+const handleColorType = (status: ProposalState, theme: DefaultTheme) => {
   switch (status) {
     case ProposalState.Pending:
     case ProposalState.Active:

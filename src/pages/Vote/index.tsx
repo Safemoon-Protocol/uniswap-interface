@@ -6,7 +6,6 @@ import { RowBetween, RowFixed } from '../../components/Row'
 import { Link } from 'react-router-dom'
 import { ProposalStatus } from './styled'
 import { ButtonPrimary } from '../../components/Button'
-
 import { Button } from 'rebass/styled-components'
 import { darken } from 'polished'
 import { CardBGImage, CardNoise, CardSection, DataCard } from '../../components/earn/styled'
@@ -15,14 +14,15 @@ import {
   ProposalState,
   useAllProposalData,
   useUserDelegatee,
-  useUserVotes
+  useUserVotes,
 } from '../../state/governance/hooks'
 import DelegateModal from '../../components/vote/DelegateModal'
 import { useTokenBalance } from '../../state/wallet/hooks'
 import { useActiveWeb3React } from '../../hooks'
 import { UNI, ZERO_ADDRESS } from '../../constants'
-import { ChainId, JSBI, TokenAmount } from '@uniswap/sdk'
-import { getEtherscanLink, shortenAddress } from '../../utils'
+import { TokenAmount, ChainId } from '@uniswap/sdk-core'
+import { JSBI } from '@uniswap/v2-sdk'
+import { shortenAddress, getEtherscanLink } from '../../utils'
 import Loader from '../../components/Loader'
 import FormattedCurrencyAmount from '../../components/FormattedCurrencyAmount'
 import { useModalOpen, useToggleDelegateModal } from '../../state/application/hooks'
@@ -71,9 +71,9 @@ const VoteCard = styled(DataCard)`
 `
 
 const WrapSmall = styled(RowBetween)`
+  margin-bottom: 1rem;
   ${({ theme }) => theme.mediaWidth.upToSmall`
     flex-wrap: wrap;
-  
   `};
 `
 

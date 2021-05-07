@@ -14,12 +14,13 @@ import {
   ProposalState,
   useProposalData,
   useUserDelegatee,
-  useUserVotesAsOfBlock
+  useUserVotesAsOfBlock,
 } from '../../state/governance/hooks'
 import { DateTime } from 'luxon'
 import ReactMarkdown from 'react-markdown'
 import VoteModal from '../../components/vote/VoteModal'
-import { JSBI, TokenAmount } from '@uniswap/sdk'
+import { TokenAmount } from '@uniswap/sdk-core'
+import { JSBI } from '@uniswap/v2-sdk'
 import { useActiveWeb3React } from '../../hooks'
 import { AVERAGE_BLOCK_TIME_IN_SECS, COMMON_CONTRACT_NAMES, UNI, ZERO_ADDRESS } from '../../constants'
 import { getEtherscanLink, isAddress } from '../../utils'
@@ -111,8 +112,8 @@ const ProposerAddressLink = styled(ExternalLink)`
 
 export default function VotePage({
   match: {
-    params: { id }
-  }
+    params: { id },
+  },
 }: RouteComponentProps<{ id: string }>) {
   const { chainId, account } = useActiveWeb3React()
 
@@ -188,7 +189,7 @@ export default function VotePage({
             <ArrowLeft size={20} /> All Proposals
           </ArrowWrapper>
           {proposalData && (
-            <ProposalStatus status={proposalData?.status}>{ProposalState[proposalData?.status]}</ProposalStatus>
+            <ProposalStatus status={proposalData.status}>{ProposalState[proposalData.status]}</ProposalStatus>
           )}
         </RowBetween>
         <AutoColumn gap="10px" style={{ width: '100%' }}>
